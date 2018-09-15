@@ -1,18 +1,34 @@
 ```
 docker pull w303972870/php
 ```
-### 日志目录：/data/php/logs
-### 默认php-fpm.conf：/etc/php7/php-fpm.conf
-### 默认www.conf：/etc/php7/php-fpm.d/www.conf
-### 默认php.ini：/etc/php7/php.ini
-### 默认缓存目录：/data/php/tmp/
+### 日志目录：/data/logs
+### 默认php-fpm.conf：/data/conf/php-fpm.conf
+### 默认www.conf：/data/conf/php-fpm.d/www.conf
+### 默认php.ini：/data/conf/php.ini
+### 默认缓存目录：/data/tmp/
 
 
 ### 开放端口：9000
 
 ```
-docker run -dit -p 9000:9000 --net host -v /data/htdocs:/data/htdocs -v /data/php/logs:/data/php/logs -v /data/php/etc/php-fpm.d/www.conf:/etc/php7/php-fpm.d/www.conf docker.io/w303972870/php
+docker run -dit -p 9000:9000 --net host -v /data/htdocs:/data/htdocs -v /data/php/:/data/  docker.io/w303972870/php
 ```
+
+
+#### 我的/data/php/目录结构
+```
+
+php
+├── conf
+│   ├── php-fpm.conf
+│   ├── php-fpm.d
+│   │   └── www.conf
+│   └── php.ini
+├── logs
+└── tmp
+
+```
+
 
 		**已安装和支持模块扩展**
 ```
